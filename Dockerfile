@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:stable-slim
 
 RUN apt-get update && \
     apt-get install wget git python-dev python-pip xvfb libfontconfig1-dev -y && \
