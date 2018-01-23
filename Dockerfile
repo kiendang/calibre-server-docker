@@ -1,13 +1,9 @@
-FROM debian:stable-slim
+FROM frolvlad/alpine-glibc
 
-RUN apt-get update && \
-    apt-get install --no-install-recommends \
+RUN apk update && \
+    apk add --no-cache \
     wget \
-    git \
     python \
-    ca-certificates \
-    xz-utils \
-    xvfb \
-    libfontconfig1-dev -y && \
+    libstdc++ && \
     wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | \
-    python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+    python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()" && \
