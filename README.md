@@ -2,11 +2,15 @@
 
 To run calibre server
 
-    docker run \
+```sh
+docker run \
     -v <path_to_local_ebook_dir>:/db \
     -p 127.0.0.1:<port>:80 \
     calibre-server --port 80 /db
+```
 
 To connect
 
-    calibredb --with-library http://localhost:<port>/#db list
+```sh
+calibredb --with-library http://localhost:<port>/#db list
+```
